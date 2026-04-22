@@ -59,7 +59,7 @@ public class Main {
 
     }
 
-    private static void findUrls(String text) {
+    static int findUrls(String text) {
         // This Regex looks for http or https followed by the typical URL structure
         String regex = "https?://[\\w\\.\\-]+(/[\\w\\.\\-/\\?\\%\\&\\=]*)?";
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
@@ -70,6 +70,8 @@ public class Main {
             System.out.println("Found link: " + matcher.group());
             count++;
         }
+
         System.out.println("\nTotal links found: " + count);
+        return count;
     }
 }
